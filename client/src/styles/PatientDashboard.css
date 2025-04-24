@@ -1,0 +1,252 @@
+.patient-dashboard {
+  padding: var(--spacing-xl) 0;
+}
+
+.dashboard-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-header h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.dashboard-header p {
+  color: var(--text-secondary-color);
+}
+
+.dashboard-tabs {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.dashboard-tabs button {
+  background: none;
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-md);
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.dashboard-tabs button:hover {
+  color: var(--primary-color);
+}
+
+.dashboard-tabs button.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.dashboard-tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.dashboard-content {
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+  padding: var(--spacing-lg);
+}
+
+.loading, .no-data {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary-color);
+}
+
+/* Care Team Section */
+.care-team-section,
+.health-summary-section,
+.recent-reports-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.care-team-section h3,
+.health-summary-section h3,
+.recent-reports-section h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary-color);
+}
+
+.care-team-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .care-team-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.care-team-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.care-team-header {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.care-team-header h4 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.care-team-info p {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Health Summary Section */
+.health-summary-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .health-summary-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.health-summary-item h4 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.health-summary-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.health-summary-item li {
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.health-summary-item li:last-child {
+  border-bottom: none;
+}
+
+/* Recent Reports Section */
+.recent-reports-list,
+.reports-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .reports-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.report-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.report-header h4 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.report-date {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary-color);
+}
+
+.report-content {
+  margin-bottom: var(--spacing-md);
+}
+
+.report-content p {
+  margin-bottom: var(--spacing-xs);
+}
+
+.report-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.view-all-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: var(--spacing-md);
+  background-color: var(--background-color);
+  border: 1px solid var(--surface-color);
+  border-radius: var(--border-radius-md);
+  color: var(--text-primary-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-all-button:hover {
+  background-color: var(--surface-color);
+}
+
+/* Profile Styles */
+.profile-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+}
+
+.profile-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-section h4 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.profile-info p {
+  margin-bottom: var(--spacing-xs);
+}
+
+.profile-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.add-new {
+  text-align: right;
+  margin-top: var(--spacing-md);
+}

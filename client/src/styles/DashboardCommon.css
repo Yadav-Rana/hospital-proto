@@ -1,0 +1,594 @@
+/* Common Dashboard Styles */
+:root {
+  --dark-zinc-900: #18181b;
+  --dark-zinc-800: #27272a;
+  --dark-zinc-700: #3f3f46;
+  --zinc-400: #a1a1aa;
+  --zinc-300: #d4d4d8;
+  --zinc-100: #f4f4f5;
+  --teal-500: #14b8a6;
+  --teal-400: #2dd4bf;
+  --orange-500: #f97316;
+  --orange-400: #fb923c;
+}
+
+.doctor-dashboard,
+.patient-dashboard,
+.caretaker-dashboard {
+  padding: 2rem 0;
+  background-color: var(--dark-zinc-900);
+  min-height: 100vh;
+  color: var(--zinc-100);
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  /* Ensure only the body scrolls */
+  overflow: visible !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  background-color: transparent;
+  position: relative;
+  /* Ensure only the body scrolls */
+  overflow: visible !important;
+}
+
+.dashboard-header {
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+}
+
+.dashboard-header h2 {
+  color: var(--teal-400);
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 8px rgba(45, 212, 191, 0.5);
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .dashboard-header h2 {
+    font-size: 2.25rem;
+  }
+}
+
+.dashboard-header p {
+  color: var(--zinc-400);
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+}
+
+.dashboard-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  padding: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .dashboard-tabs {
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.dashboard-tabs button {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: var(--zinc-400);
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-tabs button {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
+  }
+}
+
+.dashboard-tabs button:hover {
+  color: var(--teal-400);
+  transform: translateY(-3px);
+}
+
+.dashboard-tabs button::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal-500), var(--orange-500));
+  transition: all 0.3s ease;
+}
+
+.dashboard-tabs button:hover::after {
+  width: 100%;
+}
+
+.dashboard-tabs button.active {
+  color: var(--teal-400);
+  font-weight: 700;
+}
+
+.dashboard-tabs button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal-500), var(--orange-500));
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+}
+
+.dashboard-content {
+  background-color: transparent;
+  padding: 1rem 0;
+  position: relative;
+  margin-bottom: 2rem;
+  width: 100%;
+  /* Ensure only the body scrolls */
+  overflow: visible !important;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--zinc-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--zinc-700);
+  border-top-color: var(--teal-500);
+  animation: spin 1s linear infinite;
+  margin-top: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: var(--zinc-400);
+  font-size: 1.1rem;
+}
+
+/* Tab Sections */
+.patients-tab,
+.reports-tab,
+.medical-reports-tab,
+.profile-tab,
+.overview-tab {
+  padding: 2rem 1rem;
+  width: 100%;
+  position: relative;
+  /* Ensure only the body scrolls */
+  overflow: visible !important;
+}
+
+/* Tab Section Titles */
+.patients-tab h3,
+.reports-tab h3,
+.medical-reports-tab h3,
+.profile-tab h3,
+.overview-tab h3,
+.care-team-section h3,
+.health-summary-section h3,
+.recent-reports-section h3 {
+  color: var(--teal-400);
+  margin-bottom: 2.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  position: relative;
+  text-shadow: 0 0 8px rgba(45, 212, 191, 0.3);
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Table Styles */
+.table-container {
+  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--dark-zinc-700);
+  font-size: 0.875rem;
+  color: var(--zinc-300);
+}
+
+@media (min-width: 768px) {
+  td {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+th {
+  background-color: transparent;
+  font-weight: 600;
+  color: var(--teal-400);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  font-family: "Space Grotesk", sans-serif;
+  border-bottom: 2px solid var(--dark-zinc-700);
+  padding: 0.75rem 1rem;
+}
+
+@media (min-width: 768px) {
+  th {
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+tr:hover {
+  background-color: rgba(20, 184, 166, 0.05);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: var(--teal-400);
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  font-family: "Gilroy", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+@media (min-width: 768px) {
+  .action-btn {
+    margin-right: 0.75rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
+}
+
+.action-btn:hover {
+  background-color: rgba(20, 184, 166, 0.1);
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.3);
+  transform: translateY(-2px);
+}
+
+.action-btn.delete {
+  color: #ef4444;
+}
+
+.action-btn.delete:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+  transform: translateY(-2px);
+}
+
+.add-new {
+  text-align: right;
+  margin-top: 2rem;
+}
+
+.add-new .button {
+  background-color: var(--teal-500);
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Gilroy", sans-serif;
+}
+
+.add-new .button:hover {
+  background-color: var(--teal-400);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
+}
+
+/* Card Styles */
+.patient-card,
+.care-team-card,
+.health-summary-card,
+.report-card,
+.profile-card {
+  background-color: var(--dark-zinc-800);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 100%;
+  /* Ensure only the body scrolls */
+  overflow: visible !important;
+}
+
+@media (min-width: 768px) {
+  .patient-card,
+  .care-team-card,
+  .health-summary-card,
+  .report-card,
+  .profile-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.patient-card:hover,
+.care-team-card:hover,
+.report-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.2);
+}
+
+.patient-header,
+.care-team-header,
+.report-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--dark-zinc-700);
+}
+
+.patient-header h4,
+.care-team-header h4,
+.report-header h4,
+.health-summary-item h4,
+.profile-section h4 {
+  color: var(--teal-400);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .patient-header h4,
+  .care-team-header h4,
+  .report-header h4,
+  .health-summary-item h4,
+  .profile-section h4 {
+    font-size: 1.25rem;
+  }
+}
+
+.patient-id,
+.report-date {
+  font-size: 0.875rem;
+  color: var(--zinc-400);
+}
+
+.patient-info p,
+.patient-health p,
+.care-team-info p,
+.report-content p,
+.profile-info p {
+  margin-bottom: 0.75rem;
+  color: var(--zinc-300);
+}
+
+.patient-info strong,
+.patient-health strong,
+.care-team-info strong,
+.report-content strong,
+.profile-info strong {
+  color: var(--zinc-100);
+  font-weight: 600;
+}
+
+.patient-health,
+.health-summary-item {
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--dark-zinc-700);
+}
+
+.patient-actions,
+.report-actions,
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  background-color: var(--teal-500);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
+  font-family: "Gilroy", sans-serif;
+  text-align: center;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+.button:hover {
+  background-color: var(--teal-400);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.4);
+}
+
+.button.secondary {
+  background-color: transparent;
+  border: 1px solid var(--teal-500);
+  color: var(--teal-400);
+}
+
+.button.secondary:hover {
+  background-color: rgba(20, 184, 166, 0.1);
+  border-color: var(--teal-400);
+}
+
+/* Grid Layouts */
+.patient-cards,
+.care-team-cards,
+.reports-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  /* Ensure only the body scrolls */
+  overflow: visible !important;
+}
+
+@media (min-width: 768px) {
+  .patient-cards,
+  .care-team-cards,
+  .reports-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .patient-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Profile Styles */
+.profile-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--dark-zinc-700);
+}
+
+.profile-section:last-child {
+  border-bottom: none;
+}
+
+/* Health Summary */
+.health-summary-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  /* Ensure only the body scrolls */
+  overflow: visible !important;
+}
+
+@media (min-width: 768px) {
+  .health-summary-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.health-summary-item ul,
+.profile-info ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.75rem;
+}
+
+.health-summary-item li,
+.profile-info li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--dark-zinc-700);
+  color: var(--zinc-300);
+}
+
+.health-summary-item li:last-child,
+.profile-info li:last-child {
+  border-bottom: none;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.alert-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+/* View All Button */
+.view-all-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--dark-zinc-700);
+  color: var(--teal-400);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.view-all-button:hover {
+  background-color: rgba(20, 184, 166, 0.1);
+  border-color: var(--teal-500);
+}

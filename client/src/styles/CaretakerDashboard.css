@@ -1,0 +1,218 @@
+.caretaker-dashboard {
+  padding: var(--spacing-xl) 0;
+}
+
+.dashboard-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-header h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.dashboard-header p {
+  color: var(--text-secondary-color);
+}
+
+.dashboard-tabs {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.dashboard-tabs button {
+  background: none;
+  border: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-md);
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.dashboard-tabs button:hover {
+  color: var(--primary-color);
+}
+
+.dashboard-tabs button.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.dashboard-tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.dashboard-content {
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
+  padding: var(--spacing-lg);
+}
+
+.loading, .no-data {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-secondary-color);
+}
+
+/* Patient Cards */
+.patient-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .patient-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .patient-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.patient-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.patient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.patient-header h4 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.patient-id {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary-color);
+}
+
+.patient-info, .patient-health {
+  margin-bottom: var(--spacing-md);
+}
+
+.patient-info p, .patient-health p {
+  margin-bottom: var(--spacing-xs);
+}
+
+.patient-health h5 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary-color);
+}
+
+.patient-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.patient-actions button {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-lg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--surface-color);
+}
+
+th {
+  background-color: var(--background-color);
+  font-weight: 600;
+  color: var(--text-primary-color);
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-right: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.action-btn:hover {
+  text-decoration: underline;
+}
+
+.action-btn.delete {
+  color: #ef4444;
+}
+
+.add-new {
+  text-align: right;
+  margin-top: var(--spacing-md);
+}
+
+/* Profile Styles */
+.profile-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+}
+
+.profile-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-section h4 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--surface-color);
+}
+
+.profile-info p {
+  margin-bottom: var(--spacing-xs);
+}
+
+.profile-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}

@@ -1,0 +1,269 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: var(--dark-zinc-800);
+  border-radius: 0.75rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 25px rgba(20, 184, 166, 0.3);
+  border: 1px solid var(--dark-zinc-700);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--dark-zinc-700);
+}
+
+.modal-header h2 {
+  color: var(--teal-400);
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  text-shadow: 0 0 8px rgba(45, 212, 191, 0.3);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: var(--zinc-400);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  color: var(--teal-400);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--zinc-300);
+  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--dark-zinc-900);
+  border: 1px solid var(--dark-zinc-700);
+  border-radius: 0.5rem;
+  color: var(--zinc-100);
+  font-family: "Gilroy", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--teal-500);
+  box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-section-title {
+  color: var(--teal-400);
+  margin: 2rem 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--dark-zinc-700);
+}
+
+.form-section-title:first-of-type {
+  margin-top: 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Gilroy", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--teal-500);
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--teal-400);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--zinc-300);
+  border: 1px solid var(--dark-zinc-700);
+}
+
+.btn-secondary:hover {
+  background-color: var(--dark-zinc-700);
+  color: var(--zinc-100);
+  transform: translateY(-2px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Form-specific styles */
+.doctor-form,
+.patient-form,
+.caretaker-form,
+.assignment-form {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.doctor-form::-webkit-scrollbar,
+.patient-form::-webkit-scrollbar,
+.caretaker-form::-webkit-scrollbar,
+.assignment-form::-webkit-scrollbar {
+  width: 6px;
+}
+
+.doctor-form::-webkit-scrollbar-track,
+.patient-form::-webkit-scrollbar-track,
+.caretaker-form::-webkit-scrollbar-track,
+.assignment-form::-webkit-scrollbar-track {
+  background: var(--dark-zinc-900);
+}
+
+.doctor-form::-webkit-scrollbar-thumb,
+.patient-form::-webkit-scrollbar-thumb,
+.caretaker-form::-webkit-scrollbar-thumb,
+.assignment-form::-webkit-scrollbar-thumb {
+  background: var(--dark-zinc-700);
+  border-radius: 3px;
+}
+
+.doctor-form::-webkit-scrollbar-thumb:hover,
+.patient-form::-webkit-scrollbar-thumb:hover,
+.caretaker-form::-webkit-scrollbar-thumb:hover,
+.assignment-form::-webkit-scrollbar-thumb:hover {
+  background: var(--teal-500);
+}
+
+.loading-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--zinc-400);
+  font-style: italic;
+}
+
+/* File upload styling */
+.file-upload-container {
+  border: 2px dashed var(--dark-zinc-700);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--dark-zinc-900);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.file-upload-container:hover {
+  border-color: var(--teal-500);
+  background-color: rgba(20, 184, 166, 0.05);
+}
+
+.file-upload-container input[type="file"] {
+  width: 100%;
+  color: var(--zinc-300);
+  cursor: pointer;
+  font-family: "Gilroy", sans-serif;
+}
+
+.file-upload-container input[type="file"]::-webkit-file-upload-button {
+  background-color: var(--dark-zinc-700);
+  color: var(--zinc-300);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Gilroy", sans-serif;
+}
+
+.file-upload-container input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: var(--teal-500);
+  color: white;
+}
+
+.file-upload-info {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--zinc-400);
+  font-style: italic;
+}
