@@ -18,6 +18,15 @@ export default defineConfig({
     commonjsOptions: {
       include: [/node_modules/],
     },
+    // Ensure _redirects file is copied to the dist folder
+    rollupOptions: {
+      input: {
+        main: "./index.html",
+      },
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
   // Server configuration for development
   server: {
