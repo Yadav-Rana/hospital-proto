@@ -1,12 +1,13 @@
 import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/postcss";
+import netlifyPlugin from "./netlify.plugin.js";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), netlifyPlugin()],
   // Base path for deployment (can be adjusted for different environments)
-  base: "./",
+  base: "/",
   // Build configuration
   build: {
     // Output directory for production build

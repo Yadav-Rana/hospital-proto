@@ -1,0 +1,17 @@
+{
+  "name": "hospital-management-system",
+  "version": "1.0.0",
+  "description": "Hospital Management System",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd client && npm run preview"
+  },
+  "keywords": [
+    "hospital",
+    "management",
+    "healthcare"
+  ],
+  "author": "",
+  "license": "ISC"
+}
